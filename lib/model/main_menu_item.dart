@@ -5,20 +5,24 @@ import 'package:restaurant/model/sub_menu_item.dart';
 part 'main_menu_item.g.dart';
 
 @JsonSerializable()
-class MainMenuItem extends BaseModel{
-  MainMenuItem({
-    this.name,
-    this.caption,
-    this.image,
-    this.items,
-  });
+class MainMenuItem extends BaseModel {
+  MainMenuItem(
+      {this.name,
+      this.caption,
+      this.image,
+      this.items,
+      this.price,
+      this.subMenus});
 
   String? name;
   String? caption;
   String? image;
+  dynamic? price;
   List<SubMenuItem>? items;
+  List? subMenus;
 
-  factory MainMenuItem.fromJson(Map<String, dynamic> json) => _$MainMenuItemFromJson(json);
+  factory MainMenuItem.fromJson(Map<String, dynamic> json) =>
+      _$MainMenuItemFromJson(json);
 
   @override
   fromJson(Map<String, dynamic> json) => _$MainMenuItemFromJson(json);

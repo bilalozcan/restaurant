@@ -13,6 +13,8 @@ MainMenuItem _$MainMenuItemFromJson(Map<String, dynamic> json) => MainMenuItem(
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => SubMenuItem.fromJson(e as Map<String, dynamic>))
           .toList(),
+      price: json['price'],
+      subMenus: json['subMenus'] as List<dynamic>?,
     );
 
 Map<String, dynamic> _$MainMenuItemToJson(MainMenuItem instance) =>
@@ -20,5 +22,7 @@ Map<String, dynamic> _$MainMenuItemToJson(MainMenuItem instance) =>
       'name': instance.name,
       'caption': instance.caption,
       'image': instance.image,
+      'price': instance.price,
       'items': instance.items,
+      'subMenus': instance.subMenus,
     };

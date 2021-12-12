@@ -9,11 +9,13 @@ class MainMenu extends BaseModel {
   MainMenu({
     this.key,
     this.description,
+    this.orderTag,
     this.items,
   });
 
   String? key;
   String? description;
+  String? orderTag;
   List<MainMenuItem>? items;
 
   @override
